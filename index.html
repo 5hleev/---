@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Бодибилдинг для начинающих: советы по тренировкам и питанию для достижения ваших целей.">
+    <title>Главная - Бодибилдинг для начинающих</title>
+    <link rel="stylesheet" href="updated_styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/4795754/original/Arnold_Silhouette.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <header>
+        <div class="header-container">
+            <img src="https://i.pinimg.com/736x/58/f8/f3/58f8f3577137f29630b33bf6640a7175.jpg" alt="Логотип сайта" class="logo">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="burger-menu">
+                <span></span>
+            </label>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" title="Главная">Главная</a></li>
+                    <li><a href="workouts.html" title="Тренировки">Тренировки</a></li>
+                    <li><a href="nutrition.html" title="Питание">Питание</a></li>
+                    <li><a href="blog.html" title="Блог">Блог</a></li>
+                    <li><a href="contacts.html" title="Контакты">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Слоган<h2 class="slogan"></h2> -->
+    
+    <!-- Карусель с цитатами и ссылками на разделы(аналог галлереи) -->
+    <div class="container">
+        <div id="quoteCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Слайд 1 -->
+                <div class="carousel-item active">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMmI3MzdmODctMDcyYi00Yjc4LWFhMjQtMGJmYzc5MDMyZjFmXkEyXkFqcGdeQXVyMDgyNjA5MA@@._V1_.jpg" alt="Цитата 1">
+                    <div class="carousel-caption">
+                        <blockquote>“The resistance that you fight physically in the gym and the resistance that you fight in life can only build a strong character.”</blockquote>
+                        <p>— Арнольд Шварценеггер</p>
+                        <p>Тренировки для всех уровней — подберите программу удовлетворяющую вашим потребностям.</p>
+                        <a href="workouts.html" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+                <!-- Слайд 2 -->
+                <div class="carousel-item">
+                    <img src="https://i.ytimg.com/vi/5OcbOi4htTw/maxresdefault.jpg" alt="Цитата 2">
+                    <div class="carousel-caption">
+                        <blockquote>“Form is temporary, class is permanent. Motivation is the key to long-term success.”</blockquote>
+                        <p>— Дориан Ятс</p>
+                        <p>Питание для набора мышечной массы — сбалансированные планы питания для твоих целей.</p>
+                        <a href="nutrition.html" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+                <!-- Слайд 3 -->
+                <div class="carousel-item">
+                    <img src="https://staticg.sportskeeda.com/editor/2022/12/316ae-16709169565450-1920.jpg" alt="Цитата 3">
+                    <div class="carousel-caption">
+                        <blockquote>“The road to nowhere is paved with excuses.”</blockquote>
+                        <p>— Ронни Коулман</p>
+                        <p>Полезные статьи и видео - узнай новейщую информацию.</p>
+                        <a href="blog.html" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#quoteCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Предыдущий</span>
+            </a>
+            <a class="carousel-control-next" href="#quoteCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Следующий</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Главный контент -->
+    <main class="main-container">
+        <article class="content-article">
+            <h2>Популярные разделы</h2>
+            <div class="news-card-container">
+                <!-- Карточка новости 1 -->
+                <div class="news-card">
+                    <h3>Калькулятор каллорий</h3>
+                    <p>Рассчитайте своб норму каллорий.</p>
+                    <a href="nutrition.html#calorie-calculator" class="btn-read-more">Читать дальше</a>
+                </div>
+                
+                <!-- Карточка новости 2 -->
+                <div class="news-card">
+                    <h3>Планы питания</h3>
+                    <p>Примеры меню для массанабора и сушки.</p>
+                    <a href="nutrition.html#nutrition-plans" class="btn-read-more">Читать дальше</a>
+                </div>
+                
+                <!-- Карточка новости 3 -->
+                <div class="news-card">
+                    <h3>Свежие исследования о питании и тренировках</h3>
+                    <p>Самые актульные видео о тренировках и питании в нашем блоге.</p>
+                    <a href="blog.html#video-gallery" class="btn-read-more">Читать дальше</a>
+                </div>
+            </div>
+        </article>        
+        <aside class="sidebar">
+            <h3>Рекомендуемые тренировочные программы</h3>
+            <div class="training-card">
+                <h4>Full Body</h4>
+                <p>Программа, охватывающая все основные группы мышц. </p>
+                <a href="workouts.html#full-body" class="btn-select">Пример программы</a>
+            </div>
+            
+            <div class="training-card">
+                <h4>Push,Pull,Legs</h4>
+                <p>Классическая программа тренировок, повзволяющая эффективно развивать как мышечный объем так и силу.</p>
+                <a href="workouts.html#ppl" class="btn-select">Пример программы</a>
+            </div>
+
+            <div class="training-card">
+                <h4>Upper,Lower</h4>
+                <p>Золотая середина между full body и сплитом.</p>
+                <a href="workouts.html#upper-lower" class="btn-select">Пример программы</a>
+            </div>
+        </aside>      
+        
+       
+    </main>
+
+    <section class="events-calendar">
+        <h2>Календарь турниров IFBB на 2025 год</h2>
+        <ul class="events-list">
+            <li class="event-item">
+                <span class="event-date">12–14 апреля 2025</span>
+                <span class="event-name">IFBB PRO WELLNESS MALTA</span>
+                <span class="event-location">Мальта, Мальта</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">19–20 апреля 2025</span>
+                <span class="event-name">SIBERIAN POWER SHOW KRASNOYARSK</span>
+                <span class="event-location">Красноярск, Россия</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">8–9 мая 2025</span>
+                <span class="event-name">IFBB PRO WORLD CUP ROGER BOYCE BARBADOS</span>
+                <span class="event-location">Барбадос, Барбадос</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">19–21 сентября 2025</span>
+                <span class="event-name">IFBB PRO LUXEMBOURG</span>
+                <span class="event-location">Люксембург, Люксембург</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">3–5 октября 2025</span>
+                <span class="event-name">IFBB PRO MR MEXICO</span>
+                <span class="event-location">Мехико, Мексика</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">8–9 ноября 2025</span>
+                <span class="event-name">IFBB PRO MASTER WORLD CHAMPIONSHIPS MALTA</span>
+                <span class="event-location">Мальта, Мальта</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">14–16 ноября 2025</span>
+                <span class="event-name">IFBB PRO CANCUN</span>
+                <span class="event-location">Канкун, Мексика</span>
+            </li>
+            <li class="event-item">
+                <span class="event-date">7 декабря 2025</span>
+                <span class="event-name">IFBB PRO PORTUGAL</span>
+                <span class="event-location">Португалия</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Футер -->
+    <footer id="contact">
+        <p>Email: info@fitness-site.com</p>
+        <p>Социальные сети: <a href="#">Instagram</a>, <a href="#">Facebook</a></p>
+        <div class="social-buttons">
+            <a href="#" class="social-button facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-button twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-button instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+    </footer>
+
+    <!-- Подключение скриптов Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

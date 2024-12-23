@@ -1,0 +1,1580 @@
+/* Общие настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f3f3;
+    color: #1f0303;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Шапка */
+header {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 1rem 0;
+    border-bottom: 2px solid #444;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3360B5; /* яркий золотистый для акцента */
+}
+
+/* Главный контент */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 2rem auto;
+    gap: 2rem;
+}
+
+.content-article {
+    flex: 3;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #3360B5;
+}
+
+.content-article h2 {
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #fafafa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #B58C5D; /* акцентный синий */
+}
+
+.sidebar h3 {
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+/* Стили текста */
+p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.slogan {
+    text-align: center; /* Центрируем текст */
+    font-size: 24px; /* Размер шрифта */
+    color: #1a1a1a; /* Цвет текста */
+    margin: 1rem 0; /* Отступы сверху и снизу */
+    font-weight: bold; /* Жирный шрифт */
+    background-color: #3360B5; /* Цвет фона для акцента (по желанию) */
+    padding: 10px; /* Отступы внутри элемента */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для эффекта поднятости */
+}
+
+
+/* Футер */
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 2px solid #444;
+    width: 100%;
+}
+
+footer p, footer a {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #3360B5;
+}
+
+footer a:hover {
+    color: #B58C5D;
+}
+
+/* Мобильная адаптация для практики 5 */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Дополнительные стили для карусели */
+.carousel {
+    position: relative;
+    overflow: hidden; /* Скрывает части изображений */
+}
+
+.carousel-inner {
+    display: flex; /* Используем flexbox для расположения изображений */
+    transition: transform 0.5s ease; /* Плавный переход */
+}
+
+.carousel-item {
+    display: flex; /* Используем Flexbox */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    align-items: center; /* Центрируем по горизонтали */
+    justify-content: center; /* Центрируем по вертикали, если нужно */
+    position: relative; /* Устанавливаем позиционирование для абсолютных элементов */
+}
+
+.carousel-item img {
+    border-radius: 5%; /* Делаем изображения круглыми */
+    width: auto; /* Убираем фиксированную ширину, если она есть */
+    height: auto; /* Поддерживаем пропорции */
+    max-width: 100%; /* Уменьшаем размер для адаптивности */
+}
+
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%,0%); /* Центрирует по вертикали и горизонтали */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: #fff;
+    max-width: 80%; /* Устанавливаем максимальную ширину текста, чтобы не растягивался */
+}
+
+.carousel-caption blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.carousel-caption .btn {
+    background-color: #3360B5;
+    border: none;
+    color: #1a1a1a;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.carousel-caption .btn:hover {
+    background-color: #B58C5D;
+}
+/* Контейнер для карточек новостей с анимированными кнопкками 6 практика */
+.news-card-container {
+    display: flex;
+    flex-direction: column; /* Вертикальное размещение для удобства */
+    gap: 1.5rem; /* Промежуток между карточками */
+}
+
+/* Стили для каждой карточки */
+.news-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #3360B5; /* Цвет акцента для выделения */
+}
+
+.news-card h3 {
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.news-card p {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Кнопка "Читать дальше" */
+.btn-read-more {
+    display: inline-block;
+    color: #fff;
+    background-color: #B58C5D;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-read-more:hover {
+    background-color: #3360B5;
+}
+
+/* Адаптация для мобильных устройств 5 практика */
+@media (max-width: 768px) {
+    .news-card-container {
+        gap: 1rem; /* Уменьшение промежутка на маленьких экранах */
+    }
+}
+/* Стили для карточек тренировок */
+.training-card {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #B58C5D; /* Синий акцентный цвет */
+}
+
+.training-card h4 {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.training-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+/* Кнопка для перехода к опроснику */
+.btn-select {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #3360B5;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-select:hover {
+    background-color: #B58C5D;
+}
+/* Общие стили для навигационного меню */
+.nav-menu {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    /* Скрываем меню по умолчанию и позиционируем поверх остального контента */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1a1a1a;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 1000; /* Устанавливаем высокое значение, чтобы меню было поверх всех элементов */
+        padding-top: 70px; /* Позиция под хедером */
+    }
+
+    /* Показываем меню, когда чекбокс выбран */
+    .menu-toggle:checked + .burger-menu + .nav-menu {
+        display: flex;
+    }
+
+    /* Базовый стиль для кнопки бургер-меню */
+    .burger-menu {
+        display: block;
+        width: 30px;
+        height: 25px;
+        position: relative;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    /* Линии для бургер-меню */
+    .burger-menu span,
+    .burger-menu::before,
+    .burger-menu::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+    }
+
+    .burger-menu span {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .burger-menu::before {
+        top: 0;
+    }
+
+    .burger-menu::after {
+        bottom: 0;
+    }
+
+    /* Анимация линий при активации меню - крест */
+    .menu-toggle:checked + .burger-menu span {
+        transform: rotate(45deg);
+    }
+
+    .menu-toggle:checked + .burger-menu::before {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+
+    .menu-toggle:checked + .burger-menu::after {
+        bottom: 50%;
+        transform: rotate(-45deg);
+    }
+}
+
+/* Скрываем чекбокс */
+.menu-toggle {
+    appearance: none;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+/* Стили для галереи */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+    gap: 3rem; /* Промежуток между элементами */
+    justify-content: center; /* Центрируем содержимое */
+    margin-top: 0rem; /* Отступ сверху */
+    margin-bottom: 1rem; /* Отступ снизу */
+}
+
+.gallery-item {
+    position: relative; /* Позволяет позиционировать элемент внутри него */
+    width: 300px; /* Ширина изображения */
+    border-radius: 20px; /* Скругление углов */
+    overflow: hidden; /* Скрывает элементы, выходящие за границы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для эффекта поднятости */
+}
+
+.gallery-item img {
+    width: 100%; /* Изображение на полную ширину элемента */
+    height: 100%; /* Автоматическая высота для сохранения пропорций */
+    display: block; /* Блочный элемент */
+}
+
+.overlay {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    opacity: 0; /* Начальное состояние - невидимый */
+    transition: opacity 0.3s ease; /* Плавный переход при наведении */
+    display: flex; /* Для выравнивания текста */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1; /* Делаем фон видимым при наведении */
+}
+
+.text {
+    color: #fff; /* Цвет текста */
+    text-align: center; /* Центрируем текст */
+}
+
+.btn {
+    display: inline-block; /* Отображение как блочный элемент */
+    background-color: #3360B5; /* Цвет кнопки */
+    color: #1a1a1a; /* Цвет текста */
+    padding: 0.5rem 1rem; /* Отступы */
+    border-radius: 5px; /* Скругление углов */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background 0.3s ease; /* Плавный переход цвета */
+}
+
+.btn:hover {
+    background-color: #B58C5D; /* Цвет кнопки при наведении */
+}
+
+
+.gradient-background {
+    position: absolute; /* Абсолютное позиционирование, чтобы не мешать карточке */
+    top: 50%;
+    left: 50%;
+    width: 200px; /* Ширина фона меньше */
+    height: 400px;
+    background: linear-gradient(45deg, #F2E9E8, #A79085); 
+    z-index: -1; /* Размещаем за карточкой */
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%); /* Центрируем относительно экрана */
+    border-radius: 1rem;
+    box-shadow: 0 0 15px 5px #F2E9E8, 0 0 25px 10px #A79085; /* Эффект свечения */
+}
+
+.glass-card {
+    width: 400px; /* Увеличиваем ширину карточки */
+    height: 150px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(211, 211, 211, 0.5); 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Карточка будет поверх фона */
+    flex-direction: column;
+    backdrop-filter: blur(10px); /* Фильтр для карточки */
+    z-index: 0;
+    top: 100px;
+}
+.glass-card a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px #141317; /* Эффект свечения на ссылке */
+}
+
+.square {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: rgba(211, 211, 211, 0.5);
+    border-radius: 10px;
+    opacity: 0; /* Квадраты невидимы по умолчанию */
+    transition: opacity 0.3s ease-in-out;
+    backdrop-filter: blur(20px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 0;
+}
+
+.square1 {
+    top: -110px;
+    left: 10%;
+}
+
+.square2 {
+    bottom: -110px;
+    right: 10%;
+}
+
+.glass-card:hover .square {
+    animation: none; /* Сбрасываем анимацию на hover, чтобы применять только на отдельные элементы */
+    opacity: 1; /* Делаем квадраты видимыми при наведении */
+}
+
+.glass-card:hover .square1 {
+    animation: slideIn1 0.5s forwards;
+}
+
+.glass-card:hover .square2 {
+    animation: slideIn2 0.5s forwards;
+}
+
+@keyframes slideIn1 {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(50px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn2 {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50px);
+        opacity: 1;
+    }
+}
+
+/* Стили для галереи */
+.glass-container {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+    gap: 1rem; /* Промежуток между элементами */
+    justify-content: center; /* Центрируем содержимое */
+    margin-top: 2rem; /* Отступ сверху */
+    margin-bottom: 15rem; /* Отступ снизу */
+}
+
+.glass-item {
+    position: relative; /* Позволяет позиционировать элемент внутри него */
+    width: 300px; /* Ширина изображения */
+    border-radius: 20px; /* Скругление углов */
+    overflow: hidden; /* Скрывает элементы, выходящие за границы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для эффекта поднятости */
+}
+
+/* Контейнер для кнопок социальных сетей */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Общий стиль для кнопок */
+.social-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    text-decoration: none;
+    background: #333;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Плавное увеличение */
+.social-button:hover {
+    transform: scale(1.1);
+}
+
+/* Псевдоэлемент для градиента */
+.social-button::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    transition: top 0.3s ease;
+    z-index: 0;
+}
+
+/* Анимация при наведении */
+.social-button:hover::before {
+    top: 0;
+}
+
+/* Иконки поверх градиента */
+.social-button i {
+    position: relative;
+    z-index: 1;
+}
+/* Glassmorphism стиль */
+.glass-registration-form {
+    position: relative;
+    width: 400px;
+    margin: 50px auto;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    color: #000; /* Сделали текст черным */
+}
+
+/* Входные поля */
+.glass-registration-form input {
+    width: 80%;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #000; /* Сделали текст черным */
+    font-size: 1rem;
+}
+
+.glass-registration-form input::placeholder {
+    color: #444; /* Текст placeholder'а тоже стал темным */
+}
+
+/* Карточки с блюром на остальных */
+/* Контейнер Flexbox */
+.flex-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    width: 80%;
+}
+
+/* Карточки */
+.flex-card {
+    flex: 1;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+/* Ссылка, которая оборачивает картинку и текст */
+.card-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Фото */
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Наложение текста на изображение */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+/* Заголовок и кнопка внутри наложения */
+.overlay .text {
+    text-align: center;
+    color: white;
+}
+
+.overlay .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #3360B5;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.flex-card:hover .overlay {
+    opacity: 1; /* Появляется наложение при наведении */
+}
+
+/* Увеличение карточки при наведении */
+.flex-card:hover {
+    transform: scale(1.1);
+    filter: none;
+}
+
+/* Блюр остальных карточек */
+.flex-card-container:hover .flex-card {
+    filter: blur(4px);
+    transform: scale(0.9);
+}
+
+/* Убираем блюр для активной карточки */
+.flex-card-container .flex-card:hover {
+    filter: none;
+    transform: scale(1.1);
+}
+
+/* Карточки с лучами */
+/* Контейнер для карточек */
+.pseudo-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    width: 80%;
+}
+
+/* Карточки */
+.pseudo-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background: #222;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Светящиеся точки (огоньки) */
+.pseudo-card::before,
+.pseudo-card::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(255, 255, 0, 1) 0%, rgba(255, 0, 0, 0) 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: move-along-border 3s linear infinite;
+    opacity: 0; /* Скрыты по умолчанию */
+}
+
+/* Второй огонек */
+.pseudo-card::after {
+    animation-delay: 1.5s; /* Сдвиг во времени для второго огонька */
+}
+
+/* Анимация огоньков вдоль границы */
+@keyframes move-along-border {
+    0% {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+    25% {
+        top: 0;
+        left: 100%;
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        top: 100%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        top: 100%;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+}
+
+/* Активация эффекта при наведении */
+.pseudo-card:hover::before,
+.pseudo-card:hover::after {
+    opacity: 1; /* Делает огоньки видимыми */
+}
+
+.pseudo-card:hover {
+    transform: scale(1.1);
+    background: #444;
+}
+
+/* 7 */
+/* Контейнер сетки */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 равные колонки */
+    grid-template-rows: repeat(3, 1fr);    /* 3 равные строки */
+    gap: 10px; /* Расстояние между элементами */
+    width: 90%;
+    margin: 2rem auto; /* Центровка */
+    height: 600px; /* Высота сетки */
+}
+
+/* Элементы сетки */
+.grid-item {
+    position: relative;
+    border-radius: 8px; /* Скруглённые углы */
+    overflow: hidden;   /* Обрезка содержимого */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch; /* Растягиваем содержимое */
+}
+
+/* Расположение элементов в сетке */
+.grid-item:nth-child(1) {
+    grid-column: 1 / 3; /* 1-2 колонки */
+    grid-row: 1 / 2;    /* 1 строка */
+}
+
+.grid-item:nth-child(2) {
+    grid-column: 3 / 4; /* 3 колонна */
+    grid-row: 1 / 3;    /* 1-2 строки */
+}
+
+.grid-item:nth-child(3) {
+    grid-column: 4 / 5; /* 4 колонна */
+    grid-row: 1 / 2;    /* 1 строка */
+}
+
+.grid-item:nth-child(4) {
+    grid-column: 1 / 2; /* 1 колонна */
+    grid-row: 2 / 4;    /* 2-3 строки */
+}
+
+.grid-item:nth-child(5) {
+    grid-column: 2 / 3; /* 2 колонна */
+    grid-row: 2 / 3;    /* 2 строка */
+}
+
+.grid-item:nth-child(6) {
+    grid-column: 4 / 5; /* 4 колонна */
+    grid-row: 2 / 3;    /* 2 строка */
+}
+
+.grid-item:nth-child(7) {
+    grid-column: 2 / 5; /* 1-4 колонки */
+    grid-row: 3 / 4;    /* 3 строка */
+}
+
+/* Видео */
+.video-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* Высота видео должна растягиваться на всю ячейку */
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%; /* Видео будет растягиваться по высоте ячейки */
+}
+
+/* Подписи видео */
+.video-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-wrapper:hover .video-caption {
+    opacity: 1;
+}
+
+
+section {
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #B58C5D;
+}
+
+section p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Основной контейнер */
+#full-body {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px; /* Увеличили ширину */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Заголовок */
+#full-body h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #B58C5D;
+    margin-bottom: 1.5rem;
+}
+
+/* Контейнер для текста и изображений */
+.content-container {
+    display: flex;
+    flex-wrap: wrap; /* Для адаптации на мобильных устройствах */
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Текстовый блок */
+.text-content {
+    flex: 1.5; /* Больше пространства для текста */
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Изображения */
+.image-content {
+    flex: 1; /* Меньше пространства для изображений */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img {
+    max-width: 100%; /* Ограничиваем ширину картинки */
+    height: auto; /* Сохраняем пропорции */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#full-body .example-program {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-left: 4px solid #B58C5D;
+    border-radius: 4px;
+    margin: 2rem 0;
+}
+
+#full-body .example-program ul {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+}
+
+#full-body .error-list {
+    background-color: #ffffff; /* Белый фон */
+    border-left: 4px solid #B58C5D; /* Синяя полоса */
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    padding-left: 1.5rem; /* Отступ текста */
+}
+
+#full-body .error-list li {
+    color: #333333; /* Обычный текст */
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .image-content {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* PPL Секция */
+/* PPL Секция */
+#ppl {
+    background-color: #ffffff; /* Белый фон */
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Заголовок */
+#ppl h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #B58C5D; /* Синий цвет заголовка */
+    margin-bottom: 1.5rem;
+}
+
+/* Контейнер для текста и изображений */
+#ppl .content-container {
+    display: flex;
+    flex-wrap: wrap; /* Для адаптации на мобильных устройствах */
+    gap: 2rem;
+    align-items: center;
+    flex-direction: row-reverse; /* Изменяем порядок: фото слева, текст справа */
+}
+
+/* Текстовый блок */
+.text-content {
+    flex: 1.5; /* Больше пространства для текста */
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Изображения */
+.image-content {
+    flex: 1; /* Меньше пространства для изображений */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img {
+    max-width: 100%; /* Ограничиваем ширину картинки */
+    height: auto; /* Сохраняем пропорции */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Пример программы */
+#ppl .example-program {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-left: 4px solid #B58C5D; /* Синяя полоса */
+    border-radius: 4px;
+    margin: 2rem 0;
+}
+
+#ppl .example-program ul {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+}
+
+/* Типичные ошибки */
+#ppl .error-list {
+    background-color: #ffffff; /* Белый фон */
+    border-left: 4px solid #B58C5D; /* Синяя полоса */
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    padding-left: 1.5rem; /* Отступ текста */
+}
+
+#ppl .error-list li {
+    color: #333333; /* Обычный текст */
+    font-weight: normal; /* Убрали жирный шрифт */
+    margin-bottom: 0.5rem;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    #ppl .content-container {
+        flex-direction: column; /* На мобильных устройствах текст и фото снова вертикальны */
+    }
+}
+/* Upper Lower Секция */
+#upper-lower {
+    background-color: #ffffff; /* Белый фон */
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Заголовок */
+#upper-lower h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #B58C5D; /* Синий цвет заголовка */
+    margin-bottom: 1.5rem;
+}
+
+/* Контейнер для текста и изображений */
+.content-container {
+    display: flex;
+    flex-wrap: wrap; /* Адаптация для мобильных устройств */
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Текстовый блок */
+.text-content {
+    flex: 1.5; /* Больше пространства для текста */
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Изображения */
+.image-content {
+    flex: 1; /* Меньше пространства для изображений */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img {
+    max-width: 100%; /* Ограничиваем ширину картинки */
+    height: auto; /* Сохраняем пропорции */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Пример программы */
+#upper-lower .example-program {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-left: 4px solid #B58C5D; /* Синяя полоса */
+    border-radius: 4px;
+    margin: 2rem 0;
+}
+
+#upper-lower .example-program ul {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+}
+
+/* Типичные ошибки */
+#upper-lower .error-list {
+    background-color: #ffffff; /* Белый фон */
+    border-left: 4px solid #B58C5D; /* Синяя полоса */
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    padding-left: 1.5rem; /* Отступ текста */
+}
+
+#upper-lower .error-list li {
+    color: #333333; /* Обычный текст */
+    font-weight: normal; /* Убрали жирный шрифт */
+    margin-bottom: 0.5rem;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .image-content {
+        margin-bottom: 1.5rem;
+    }
+}
+
+#nutrition-categories {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#nutrition-categories .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#nutrition-categories .text-content {
+    flex: 1.5;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+#nutrition-categories .image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nutrition-categories .image-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#calorie-calculator {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#calorie-calculator form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#calorie-calculator input, #calorie-calculator select, #calorie-calculator button {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#calorie-calculator button {
+    background-color: #B58C5D;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#calorie-calculator button:hover {
+    background-color: #3360B5;
+}
+
+#calorie-result {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+#nutrition-plans {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#nutrition-plans h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #B58C5D;
+    margin-bottom: 1.5rem;
+}
+
+.nutrition-plan {
+    margin-bottom: 2rem;
+}
+
+.nutrition-plan h3 {
+    font-size: 1.5rem;
+    color: #3360B5;
+    margin-bottom: 1rem;
+}
+
+.nutrition-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.nutrition-plan th, .nutrition-plan td {
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+.nutrition-plan th {
+    background-color: #B58C5D;
+    color: white;
+    font-weight: bold;
+}
+
+.nutrition-plan td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.nutrition-plan tbody tr:nth-child(even) td {
+    background-color: #ffffff;
+}
+
+.nutrition-plan tbody tr:hover td {
+    background-color: #3360B5;
+    color: white;
+}
+
+.nutrition-plan tbody td:nth-child(1) {
+    font-weight: bold;
+}
+#video-gallery {
+    background-color: #ffffff;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#video-gallery h2 {
+    font-size: 2rem;
+    color: #B58C5D;
+    margin-bottom: 1.5rem;
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.video-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.video-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.video-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    #video-gallery h2 {
+        font-size: 1.8rem;
+    }
+
+    .video-item iframe {
+        height: 150px;
+    }
+}
+
+.events-calendar {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.events-calendar h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #B58C5D;
+    margin-bottom: 1.5rem;
+}
+
+.events-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Два столбца */
+    gap: 1rem; /* Промежуток между элементами */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.event-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #f9f9f9, #e9f5ff);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.event-item span {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.event-item .event-date {
+    font-weight: bold;
+    color: #B58C5D;
+}
+
+.event-item .event-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.event-item .event-location {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .events-list {
+        grid-template-columns: 1fr; /* Один столбец на узких экранах */
+    }
+}
+/* Стили для формы контактов */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #B58C5D;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 115, 230, 0.5);
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #B58C5D;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #005bb5;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .contact-form button {
+        font-size: 1rem;
+    }
+}
